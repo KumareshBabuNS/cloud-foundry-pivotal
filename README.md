@@ -31,3 +31,7 @@ $cf login -a https://api.run.pivotal.io
 ```
 cf push
 ```
+Screenshot: 
+![alt text](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img1.png “image 1")
+ 
+![alt text](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img2.png “image 2”)
