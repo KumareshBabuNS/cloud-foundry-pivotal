@@ -93,3 +93,16 @@ $cf scale cf-spring -m 1G
 # Increase the disk limit for each app instance
 $cf scale cf-spring -k 512M
 ```
+
+## Deleting the services and undeploying the application
+```
+# Need to unbind a service before deletion
+$cf unbind-service cf-spring cf-spring-db
+
+$cf delete-service cf-spring-db
+
+# Delete the application by using delete command. -r deletes all routes associated with the app
+$cf delete cf-spring -r
+```
+Screenshot: 
+![Img6](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img6.png)
