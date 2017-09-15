@@ -1,4 +1,4 @@
-# cloud-foundry-pivotal
+# cloud-foundry-pivotal (url : cf-spring-proposable-leucite.cfapps.io)
 This repo contains a sample Spring Boot app and steps to deploy the app to Pivotal Web Services
 
 
