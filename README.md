@@ -29,9 +29,41 @@ $cf login -a https://api.run.pivotal.io
 
 * Push code to PWS
 ```
-cf push
+$cf push
 ```
 Screenshot: 
 ![Img1](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img1.png)
  
 ![Img2](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img2.png)
+
+
+* View app logs
+```
+$cf logs cf-spring --recent
+$cf logs cf-spring --recent
+# to live stream the logs to console
+$cf logs cf-spring  
+```
+Press Control C to stop streaming.
+
+Screenshot:
+
+![Img3](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img1.png)
+
+* Connect a Database to the application. We use ElephantSQL
+```
+$cf marketplace -s elephantsql
+
+$cf create-service elephantsql turtle cf-spring-db
+
+$cf bind-service cf-spring cf-spring-db
+
+
+# Restart the app
+$cf restart cf-spring
+
+# Verify the new service is bound to the app
+$cf services
+```
+Screenshot: 
+![Img4](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img1.png)
