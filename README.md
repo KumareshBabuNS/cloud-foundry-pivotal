@@ -71,3 +71,25 @@ $cf services
 ```
 Screenshot: 
 ![Img5](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img5.png)
+
+
+* Scaling the application
+* Scaling the app horizontally adds or removes app instances. Adding more instances allows the application to handle increased traffic and demand.
+
+```
+# Increase the number of app instances from one to two
+$cf scale cf-spring -i 2
+
+# Check the status of the app and verify there are two instances running
+$cf app cf-spring
+```
+
+* Scaling the app vertically changes the disk space limit or memory limit for each app instance
+
+```
+# Increase the memory limit for each app instance
+$cf scale cf-spring -m 1G
+
+# Increase the disk limit for each app instance
+$cf scale cf-spring -k 512M
+```
