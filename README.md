@@ -48,7 +48,7 @@ Press Control C to stop streaming.
 
 Screenshot:
 
-![Img3](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img1.png)
+![Img3](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img3.png)
 
 * Connect a Database to the application. We use ElephantSQL
 ```
