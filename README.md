@@ -1,4 +1,4 @@
-# cloud-foundry-pivotal (url : cf-spring-proposable-leucite.cfapps.io)
+# cloud-foundry-pivotal (url : http://cf-spring-proposable-leucite.cfapps.io/)
 This repo contains a sample Spring Boot app and steps to deploy the app to Pivotal Web Services
 
 
@@ -73,7 +73,7 @@ Screenshot:
 ![Img5](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img5.png)
 
 
-* Scaling the application
+## Scaling the application
 * Scaling the app horizontally adds or removes app instances. Adding more instances allows the application to handle increased traffic and demand.
 
 ```
