@@ -48,12 +48,16 @@ Press Control C to stop streaming.
 
 Screenshot:
 
-![Img3](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img3.png)
+![Img3](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img3_new.png)
 
 * Connect a Database to the application. We use ElephantSQL
 ```
 $cf marketplace -s elephantsql
+```
+Screenshot: 
+![Img4](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img4.png)
 
+```
 $cf create-service elephantsql turtle cf-spring-db
 
 $cf bind-service cf-spring cf-spring-db
@@ -66,4 +70,4 @@ $cf restart cf-spring
 $cf services
 ```
 Screenshot: 
-![Img4](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img1.png)
+![Img5](https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img5.png)
