@@ -1,0 +1,34 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "cloud-foundry-pivotal (url : http://cf-spring-proposable-leucite.cfapps.io/)\n\n\nThis repo contains a sample Spring Boot app and steps to deploy the app to Pivotal Web Services\n\n\nRequirements:\n\n\n\n\nPivotal Web service account (free trial available)\n\n\nCloud Foundry Command Line Interface (Download from https://github.com/cloudfoundry/cli#downloads )\n\n\nDo a help command to check installation\n\n\n\n\n$cf help\n\n\n\n\nSteps:\n\n\n\n\nClone the sample app repo \n\n\n\n\n$git clone https://github.com/cloudfoundry-samples/cf-sample-app-spring.git\n\n\n\n\n\n\nNavigate to the app directory\n\n\n\n\n$cd cf-sample-app-spring\n\n\n\n\n\n\nLogin to Pivotal Web Service (PWS)\n\n\n\n\n$cf login -a https://api.run.pivotal.io\n\n\n\n\n\n\n\n\nEnter your PWS account user name and password to authenticate\n\n\n\n\n\n\nPush code to PWS\n\n\n\n\n\n\n$cf push\n\n\n\n\nScreenshot: \n\n\n\n\n\n\n\nView app logs\n\n\n\n\n$cf logs cf-spring --recent\n$cf logs cf-spring --recent\n# to live stream the logs to console\n$cf logs cf-spring  \n\n\n\n\nPress Control C to stop streaming.\n\n\nScreenshot:\n\n\n\n\n\n\nConnect a Database to the application. We use ElephantSQL\n\n\n\n\n$cf marketplace -s elephantsql\n\n\n\n\nScreenshot: \n\n\n\n$cf create-service elephantsql turtle cf-spring-db\n\n$cf bind-service cf-spring cf-spring-db\n\n\n# Restart the app\n$cf restart cf-spring\n\n# Verify the new service is bound to the app\n$cf services\n\n\n\n\nScreenshot: \n\n\n\nScaling the application\n\n\n\n\nScaling the app horizontally adds or removes app instances. Adding more instances allows the application to handle increased traffic and demand.\n\n\n\n\n# Increase the number of app instances from one to two\n$cf scale cf-spring -i 2\n\n# Check the status of the app and verify there are two instances running\n$cf app cf-spring\n\n\n\n\n\n\nScaling the app vertically changes the disk space limit or memory limit for each app instance\n\n\n\n\n# Increase the memory limit for each app instance\n$cf scale cf-spring -m 1G\n\n# Increase the disk limit for each app instance\n$cf scale cf-spring -k 512M\n\n\n\n\nDeleting the services and undeploying the application\n\n\n# Need to unbind a service before deletion\n$cf unbind-service cf-spring cf-spring-db\n\n$cf delete-service cf-spring-db\n\n# Delete the application by using delete command. -r deletes all routes associated with the app\n$cf delete cf-spring -r\n\n\n\n\nScreenshot:",
+            "title": "Home"
+        },
+        {
+            "location": "/#cloud-foundry-pivotal-url-httpcf-spring-proposable-leucitecfappsio",
+            "text": "This repo contains a sample Spring Boot app and steps to deploy the app to Pivotal Web Services",
+            "title": "cloud-foundry-pivotal (url : http://cf-spring-proposable-leucite.cfapps.io/)"
+        },
+        {
+            "location": "/#requirements",
+            "text": "Pivotal Web service account (free trial available)  Cloud Foundry Command Line Interface (Download from https://github.com/cloudfoundry/cli#downloads )  Do a help command to check installation   $cf help",
+            "title": "Requirements:"
+        },
+        {
+            "location": "/#steps",
+            "text": "Clone the sample app repo    $git clone https://github.com/cloudfoundry-samples/cf-sample-app-spring.git   Navigate to the app directory   $cd cf-sample-app-spring   Login to Pivotal Web Service (PWS)   $cf login -a https://api.run.pivotal.io    Enter your PWS account user name and password to authenticate    Push code to PWS    $cf push  Screenshot:     View app logs   $cf logs cf-spring --recent\n$cf logs cf-spring --recent\n# to live stream the logs to console\n$cf logs cf-spring    Press Control C to stop streaming.  Screenshot:    Connect a Database to the application. We use ElephantSQL   $cf marketplace -s elephantsql  Screenshot:   $cf create-service elephantsql turtle cf-spring-db\n\n$cf bind-service cf-spring cf-spring-db\n\n\n# Restart the app\n$cf restart cf-spring\n\n# Verify the new service is bound to the app\n$cf services  Screenshot:",
+            "title": "Steps:"
+        },
+        {
+            "location": "/#scaling-the-application",
+            "text": "Scaling the app horizontally adds or removes app instances. Adding more instances allows the application to handle increased traffic and demand.   # Increase the number of app instances from one to two\n$cf scale cf-spring -i 2\n\n# Check the status of the app and verify there are two instances running\n$cf app cf-spring   Scaling the app vertically changes the disk space limit or memory limit for each app instance   # Increase the memory limit for each app instance\n$cf scale cf-spring -m 1G\n\n# Increase the disk limit for each app instance\n$cf scale cf-spring -k 512M",
+            "title": "Scaling the application"
+        },
+        {
+            "location": "/#deleting-the-services-and-undeploying-the-application",
+            "text": "# Need to unbind a service before deletion\n$cf unbind-service cf-spring cf-spring-db\n\n$cf delete-service cf-spring-db\n\n# Delete the application by using delete command. -r deletes all routes associated with the app\n$cf delete cf-spring -r  Screenshot:",
+            "title": "Deleting the services and undeploying the application"
+        }
+    ]
+}

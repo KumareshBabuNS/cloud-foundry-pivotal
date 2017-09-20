@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <link rel="shortcut icon" href="./assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.1">
+    
+    
+      
+        <title>Pivotal Web Services(PWS) Sample App Deploy</title>
+      
+    
+    
+      <script src="./assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="./assets/stylesheets/application-a20f419c8e.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="." title="Pivotal Web Services(PWS) Sample App Deploy" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon md-icon--home"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            Home
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <div class="md-nav__button md-logo">
+      
+        <i class="md-icon md-icon--home"></i>
+      
+    </div>
+    Pivotal Web Services(PWS) Sample App Deploy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+      Home
+    </a>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="cloud-foundry-pivotal-url-httpcf-spring-proposable-leucitecfappsio">cloud-foundry-pivotal (url : http://cf-spring-proposable-leucite.cfapps.io/)</h1>
+<p>This repo contains a sample Spring Boot app and steps to deploy the app to Pivotal Web Services</p>
+<h1 id="requirements">Requirements:</h1>
+<ul>
+<li>Pivotal Web service account (free trial available)</li>
+<li>Cloud Foundry Command Line Interface (Download from https://github.com/cloudfoundry/cli#downloads )</li>
+<li>Do a help command to check installation</li>
+</ul>
+<pre><code>$cf help
+</code></pre>
+
+<h1 id="steps">Steps:</h1>
+<ul>
+<li>Clone the sample app repo </li>
+</ul>
+<pre><code>$git clone https://github.com/cloudfoundry-samples/cf-sample-app-spring.git
+</code></pre>
+
+<ul>
+<li>Navigate to the app directory</li>
+</ul>
+<pre><code>$cd cf-sample-app-spring
+</code></pre>
+
+<ul>
+<li>Login to Pivotal Web Service (PWS)</li>
+</ul>
+<pre><code>$cf login -a https://api.run.pivotal.io
+</code></pre>
+
+<ul>
+<li>
+<p>Enter your PWS account user name and password to authenticate</p>
+</li>
+<li>
+<p>Push code to PWS</p>
+</li>
+</ul>
+<pre><code>$cf push
+</code></pre>
+
+<p>Screenshot: 
+<img alt="Img1" src="https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img1.png" /></p>
+<p><img alt="Img2" src="https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img2.png" /></p>
+<ul>
+<li>View app logs</li>
+</ul>
+<pre><code>$cf logs cf-spring --recent
+$cf logs cf-spring --recent
+# to live stream the logs to console
+$cf logs cf-spring  
+</code></pre>
+
+<p>Press Control C to stop streaming.</p>
+<p>Screenshot:</p>
+<p><img alt="Img3" src="https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img3_new.png" /></p>
+<ul>
+<li>Connect a Database to the application. We use ElephantSQL</li>
+</ul>
+<pre><code>$cf marketplace -s elephantsql
+</code></pre>
+
+<p>Screenshot: 
+<img alt="Img4" src="https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img4.png" /></p>
+<pre><code>$cf create-service elephantsql turtle cf-spring-db
+
+$cf bind-service cf-spring cf-spring-db
+
+
+# Restart the app
+$cf restart cf-spring
+
+# Verify the new service is bound to the app
+$cf services
+</code></pre>
+
+<p>Screenshot: 
+<img alt="Img5" src="https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img5.png" /></p>
+<h2 id="scaling-the-application">Scaling the application</h2>
+<ul>
+<li>Scaling the app horizontally adds or removes app instances. Adding more instances allows the application to handle increased traffic and demand.</li>
+</ul>
+<pre><code># Increase the number of app instances from one to two
+$cf scale cf-spring -i 2
+
+# Check the status of the app and verify there are two instances running
+$cf app cf-spring
+</code></pre>
+
+<ul>
+<li>Scaling the app vertically changes the disk space limit or memory limit for each app instance</li>
+</ul>
+<pre><code># Increase the memory limit for each app instance
+$cf scale cf-spring -m 1G
+
+# Increase the disk limit for each app instance
+$cf scale cf-spring -k 512M
+</code></pre>
+
+<h2 id="deleting-the-services-and-undeploying-the-application">Deleting the services and undeploying the application</h2>
+<pre><code># Need to unbind a service before deletion
+$cf unbind-service cf-spring cf-spring-db
+
+$cf delete-service cf-spring-db
+
+# Delete the application by using delete command. -r deletes all routes associated with the app
+$cf delete cf-spring -r
+</code></pre>
+
+<p>Screenshot: 
+<img alt="Img6" src="https://github.com/richabhatia20/cloud-foundry-pivotal/blob/master/img6.png" /></p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="./assets/javascripts/application-f3ab9e5ff8.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
