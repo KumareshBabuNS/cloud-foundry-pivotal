@@ -1,2 +1,15 @@
-site_name: Pivotal Web Services(PWS) Sample App Deploy
+# Project information
+site_name: 'Pivotal Web Services(PWS) Sample App Deploy'
+site_description: 'Steps to deploy an app to PWS'
+
+# Visual theme
 theme: 'material'
+
+# Options
+extra:
+  palette:
+    primary: 'teal'
+    accent: 'cyan'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
